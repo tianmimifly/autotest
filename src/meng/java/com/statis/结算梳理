@@ -1,0 +1,92 @@
+1、造数据
+    1、确保t_mer_group表里的数据被创建
+    2、分成表 t_mer_revenue_ration 设置分成
+    3、 t_game设置分成
+    4、user_game_binding表有对应的渠道
+    5、index_order_info表造数据天数
+    6、csp_coupon代金券表有数据
+    7、csp_coupon_use_record代金券使用记录表
+        amount随机 （0， csp_coupon.balance ）
+        更新csp_coupon表
+----------------------------------------------
+select truncate(SUM(ygfc),2),member_uid  from ( SELECT (SUM(total)*game_fc/100*zg_fc/100) as ygfc,(SUM(total)*game_fc/100*(1-zg_fc/100))  as zgfc,member_uid,leader_uid FROM `tmm_statis_js` GROUP BY member_uid,sdk_game_id) a
+ where ygfc > 0 GROUP  BY a.member_uid
+;
+select truncate(SUM(zgfc),2),leader_uid  from ( SELECT (SUM(total)*game_fc/100*zg_fc/100) as ygfc,(SUM(total)*game_fc/100*(1-zg_fc/100))  as zgfc,member_uid,leader_uid FROM `tmm_statis_js` GROUP BY member_uid,sdk_game_id) a
+where zgfc>0  GROUP  BY a.leader_uid
+;
+
+
+set @statis_date='2018-01-19';
+
+select  a.*,(CASE WHEN ISNULL(grdjq) THEN pay_price ELSE (pay_price+grdjq) END)    as zj from (
+SELECT order_id,buyer_uid,order_price,pay_price,sdk_game_id, (
+ CASE WHEN (pay_price< order_price  ) THEN
+(SELECT SUM(b.amount)/10 from csp_coupon_use_record b INNER JOIN csp_coupon c on b.coupon_id = c.coupon_id where b.order_id = a.order_id and c.biz_type =2 ) ELSE 0 END
+) as grdjq  from index_order_info a where create_date= DATE_FORMAT(@statis_date,'%Y%m%d') and order_status =4 and game_id=3 ORDER BY sdk_game_id  ) a
+where buyer_uid in (
+90000022	,
+90000024	,
+90000025	,
+90000032	,
+90000068	,
+90000173	,
+90000175	,
+90000186	,
+90000202	,
+90000206	,
+90000210	,
+90000218	,
+90000219	,
+90000236	,
+90000238	,
+90000466	,
+90000468	,
+90000469	,
+90000470	,
+90000475	,
+90000477	,
+90000481	,
+90000497	,
+90000498
+)
+;
+
+
+--查询
+select *,FROM_UNIXTIME(ctime) from csp_coupon where expire_time=222 and game_id <> '11111';
+---- 删除数据
+DELETE FROM csp_coupon_use_record  where coupon_id in (select coupon_id from  csp_coupon where expire_time=222 and game_id <> '11111');
+DELETE FROM  csp_coupon where expire_time=222 and game_id <> '11111';
+DELETE FROM index_order_info where create_date='20180109' and remark='tmm_ceshi';
+
+
+set @statis_date ='2018-01-19';
+DELETE FROM tmm_js_tj where statis_date=@statis_date;
+INSERT INTO `tmm_js_tj` (`statis_date`,  `total`,`uid`, `mer_type`)
+select statis_date,truncate(SUM(ygfc),2),member_uid,1  from ( SELECT statis_date,(SUM(total)*game_fc/100*zg_fc/100) as ygfc,(SUM(total)*game_fc/100*(1-zg_fc/100))  as zgfc,member_uid,leader_uid FROM `tmm_statis_js` where  statis_date=@statis_date GROUP BY member_uid,sdk_game_id) a
+ where ygfc > 0 GROUP  BY a.member_uid
+;
+INSERT INTO `tmm_js_tj` (`statis_date`,  `total`,`uid`, `mer_type`)
+select statis_date,truncate(SUM(zgfc),2),leader_uid,2  from ( SELECT statis_date,(SUM(total)*game_fc/100*zg_fc/100) as ygfc,(SUM(total)*game_fc/100*(1-zg_fc/100))  as zgfc,member_uid,leader_uid FROM `tmm_statis_js` where  statis_date=@statis_date GROUP BY member_uid,sdk_game_id) a
+where zgfc>0   GROUP  BY a.leader_uid
+
+-- 对比
+set @date='2018-01-19';
+SELECT a.uid,a.total,b.revenue,a.mer_type FROM `tmm_js_tj` a
+INNER JOIN t_statis_revenue b on a.uid=b.uid and a.statis_date=b.statis_date  where a.statis_date=@date and a.total<> b.revenue;
+
+--代金券统计对比
+
+SET @statis_date ='2018-01-19';
+select a.*,b.miao_catpt from (
+SELECT statis_date,SUM(grdjq)*10 as grdjq,member_uid,leader_uid,sdk_game_id FROM `tmm_statis_js`
+where statis_date=@statis_date
+GROUP BY sdk_game_id,member_uid ) a
+LEFT JOIN t_statis_mer_cash_coupon b on a.sdk_game_id = b.sdk_game_id AND
+a.member_uid = b.mer_uid  AND
+a.statis_date=b.statis_date where a.statis_date =@statis_date and a.grdjq <> b.miao_catpt
+
+;
+
+

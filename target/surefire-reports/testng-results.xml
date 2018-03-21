@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="2" ignored="0" total="4" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite1" duration-ms="11011" started-at="2018-02-26T18:21:48Z" finished-at="2018-02-26T18:21:59Z">
+    <groups>
+    </groups>
+    <test name="Regression1" duration-ms="11011" started-at="2018-02-26T18:21:48Z" finished-at="2018-02-26T18:21:59Z">
+      <class name="com.milan.cases.DefaultTest">
+        <test-method status="PASS" signature="CaseBaseInit()[pri:0, instance:com.milan.cases.DefaultTest@129a8472]" name="CaseBaseInit" is-config="true" duration-ms="743" started-at="2018-02-26T18:21:48Z" finished-at="2018-02-26T18:21:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CaseBaseInit -->
+        <test-method status="FAIL" signature="Test_ByExcel(com.milan.entity.ExcelCaseOne)[pri:0, instance:com.milan.cases.DefaultTest@129a8472]" name="Test_ByExcel" duration-ms="4495" started-at="2018-02-26T18:21:49Z" data-provider="dataInfo" finished-at="2018-02-26T18:21:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.milan.entity.ExcelCaseOne@27462a88]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Throwable">
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable
+at message : 验证code expected [000] but found [null] in method : .Test_ByExcel(DefaultTest:38)
+at com.milan.cases.DefaultTest.Test_ByExcel(DefaultTest.java:38)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_ByExcel -->
+        <test-method status="FAIL" signature="Test_ByExcel(com.milan.entity.ExcelCaseOne)[pri:0, instance:com.milan.cases.DefaultTest@129a8472]" name="Test_ByExcel" duration-ms="1914" started-at="2018-02-26T18:21:54Z" data-provider="dataInfo" finished-at="2018-02-26T18:21:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.milan.entity.ExcelCaseOne@47e2e487]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Throwable">
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable
+at message : 验证code expected [000] but found [null] in method : .Test_ByExcel(DefaultTest:38)
+at com.milan.cases.DefaultTest.Test_ByExcel(DefaultTest.java:38)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_ByExcel -->
+        <test-method status="PASS" signature="Test_ByExcel(com.milan.entity.ExcelCaseOne)[pri:0, instance:com.milan.cases.DefaultTest@129a8472]" name="Test_ByExcel" duration-ms="1846" started-at="2018-02-26T18:21:55Z" data-provider="dataInfo" finished-at="2018-02-26T18:21:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.milan.entity.ExcelCaseOne@61001b64]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_ByExcel -->
+        <test-method status="PASS" signature="Test_ByExcel(com.milan.entity.ExcelCaseOne)[pri:0, instance:com.milan.cases.DefaultTest@129a8472]" name="Test_ByExcel" duration-ms="1884" started-at="2018-02-26T18:21:57Z" data-provider="dataInfo" finished-at="2018-02-26T18:21:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.milan.entity.ExcelCaseOne@4310d43]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_ByExcel -->
+        <test-method status="PASS" signature="WrteExcel()[pri:0, instance:com.milan.cases.DefaultTest@129a8472]" name="WrteExcel" is-config="true" duration-ms="104" started-at="2018-02-26T18:21:59Z" finished-at="2018-02-26T18:21:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WrteExcel -->
+      </class> <!-- com.milan.cases.DefaultTest -->
+    </test> <!-- Regression1 -->
+  </suite> <!-- Suite1 -->
+</testng-results>

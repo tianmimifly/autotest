@@ -1,0 +1,233 @@
+[
+  {
+    "csp_activity": [
+      {
+        "activity_id": 1514363097942879,
+        "activity_name": "开服活动",
+        "activity_status": 2,
+        "activity_type": 1,
+        "balance": 997,
+        "begin_time": 1515340800,
+        "begin_time__date": "2018-01-08 00:00:00",
+        "creator": 23232,
+        "ctime": 1514455391,
+        "ctime__date": "2017-12-28 18:03:11",
+        "end_time": 1516291200,
+        "end_time__date": "2018-01-19 00:00:00",
+        "utime": 1515486803,
+        "utime__date": "2018-01-09 16:33:23"
+      }
+    ]
+  },
+  {
+    "csp_coupon_config": [
+      {
+        "activity_id": 1514363097942879,
+        "config_id": 300022226,
+        "config_status": 1,
+        "creator": 111,
+        "ctime": 1515399562,
+        "ctime__date": "2018-01-08 16:19:22",
+        "game_id": 1501638381223898,
+        "num_limit": 2,
+        "os_type": 1,
+        "utime": 1515399690,
+        "utime__date": "2018-01-08 16:21:30",
+        "valid_days": 7,
+        "value": 5
+      },
+      {
+        "activity_id": 1514363097942879,
+        "config_id": 300022224,
+        "config_status": 2,
+        "creator": 111,
+        "ctime": 1515399562,
+        "ctime__date": "2018-01-08 16:19:22",
+        "game_id": 1501917548532190,
+        "num_limit": 2,
+        "os_type": 1,
+        "utime": 1515399690,
+        "utime__date": "2018-01-08 16:21:30",
+        "valid_days": 7,
+        "value": 3
+      },
+      {
+        "activity_id": 1514363097942879,
+        "config_id": 1514455759116007,
+        "config_status": 3,
+        "creator": 30042,
+        "ctime": 1514455759,
+        "ctime__date": "2017-12-28 18:09:19",
+        "game_id": 1479887736941,
+        "num_limit": 1,
+        "os_type": 1,
+        "utime": 1515376702,
+        "utime__date": "2018-01-08 09:58:22",
+        "valid_days": 7,
+        "value": 10
+      },
+      {
+        "activity_id": 1514363097942879,
+        "config_id": 1514455759116008,
+        "config_status": 3,
+        "creator": 30042,
+        "ctime": 1514455759,
+        "ctime__date": "2017-12-28 18:09:19",
+        "game_id": 1479891210445,
+        "num_limit": 1,
+        "os_type": 1,
+        "utime": 1515034130,
+        "utime__date": "2018-01-04 10:48:50",
+        "valid_days": 7,
+        "value": 5
+      },
+      {
+        "activity_id": 1514363097942879,
+        "config_id": 300022222,
+        "config_status": 2,
+        "creator": 111,
+        "ctime": 1515399562,
+        "ctime__date": "2018-01-08 16:19:22",
+        "game_id": 1479887736941,
+        "num_limit": 1,
+        "os_type": 2,
+        "utime": 1515399690,
+        "utime__date": "2018-01-08 16:21:30",
+        "valid_days": 7,
+        "value": 1
+      },
+      {
+        "activity_id": 1514363097942879,
+        "config_id": 300022223,
+        "config_status": 2,
+        "creator": 111,
+        "ctime": 1515399562,
+        "ctime__date": "2018-01-08 16:19:22",
+        "game_id": 1501483404135263,
+        "num_limit": 2,
+        "os_type": 2,
+        "utime": 1515399690,
+        "utime__date": "2018-01-08 16:21:30",
+        "valid_days": 7,
+        "value": 2
+      },
+      {
+        "activity_id": 1514363097942879,
+        "config_id": 300022225,
+        "config_status": 3,
+        "creator": 111,
+        "ctime": 1515399562,
+        "ctime__date": "2018-01-08 16:19:22",
+        "game_id": 1501555342947295,
+        "num_limit": 2,
+        "os_type": 2,
+        "utime": 1515399690,
+        "utime__date": "2018-01-08 16:21:30",
+        "valid_days": 7,
+        "value": 4
+      }
+    ]
+  },
+  {
+    "csp_activity_capital_flow": [
+      {
+        "account_id": 1514363097942879,
+        "amount": 1,
+        "biz_id": 1515485847955744,
+        "biz_type": 2,
+        "ctime": 1515486803,
+        "ctime__date": "2018-01-09 16:33:23",
+        "flow_id": 1514893578190655,
+        "remark": "null",
+        "utime": 1515486803,
+        "utime__date": "2018-01-09 16:33:23"
+      },
+      {
+        "account_id": 1514363097942879,
+        "amount": 2,
+        "biz_id": 1515485847955745,
+        "biz_type": 2,
+        "ctime": 1515486803,
+        "ctime__date": "2018-01-09 16:33:23",
+        "flow_id": 1514893578190656,
+        "remark": "null",
+        "utime": 1515486803,
+        "utime__date": "2018-01-09 16:33:23"
+      }
+    ]
+  },
+  {
+    "csp_activity_user": [
+      {
+        "activety_id": 1514363097942879,
+        "ctime": 1515486803,
+        "ctime__date": "2018-01-09 16:33:23",
+        "game_id": 1479887736941,
+        "id": 1514266895565278,
+        "is_delete": 0,
+        "mobile": "",
+        "os_type": 2,
+        "uid": 30098,
+        "utime": 1515486803,
+        "utime__date": "2018-01-09 16:33:23"
+      },
+      {
+        "activety_id": 1514363097942879,
+        "ctime": 1515486803,
+        "ctime__date": "2018-01-09 16:33:23",
+        "game_id": 1501483404135263,
+        "id": 1514266895565279,
+        "is_delete": 0,
+        "mobile": "",
+        "os_type": 2,
+        "uid": 30098,
+        "utime": 1515486803,
+        "utime__date": "2018-01-09 16:33:23"
+      }
+    ]
+  },
+  {
+    "csp_coupon": [
+      {
+        "account_id": 1514363097942879,
+        "account_type": 2,
+        "balance": 1,
+        "biz_type": 1,
+        "coupon_id": 1515485847955744,
+        "coupon_status": 1,
+        "creator": -1,
+        "ctime": 1515486803,
+        "ctime__date": "2018-01-09 16:33:23",
+        "expire_time": 1516031999,
+        "expire_time__date": "2018-01-15 23:59:59",
+        "game_id": 1479887736941,
+        "os_type": 2,
+        "uid": 30098,
+        "utime": 1515486803,
+        "utime__date": "2018-01-09 16:33:23",
+        "valid_days": 7,
+        "value": 1
+      },
+      {
+        "account_id": 1514363097942879,
+        "account_type": 2,
+        "balance": 2,
+        "biz_type": 1,
+        "coupon_id": 1515485847955745,
+        "coupon_status": 1,
+        "creator": -1,
+        "ctime": 1515486803,
+        "ctime__date": "2018-01-09 16:33:23",
+        "expire_time": 1516031999,
+        "expire_time__date": "2018-01-15 23:59:59",
+        "game_id": 1501483404135263,
+        "os_type": 2,
+        "uid": 30098,
+        "utime": 1515486803,
+        "utime__date": "2018-01-09 16:33:23",
+        "valid_days": 7,
+        "value": 2
+      }
+    ]
+  }
+]

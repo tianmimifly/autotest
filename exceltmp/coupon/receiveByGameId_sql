@@ -1,0 +1,51 @@
+set @activity_id='1000111111';
+delete from csp_activity where activity_id=@activity_id;
+delete from csp_coupon_config where  activity_id=@activity_id;
+delete from csp_activity_capital_flow where account_id=@activity_id;
+delete from csp_activity_user where  activety_id=@activity_id;
+delete from csp_coupon where account_id=@activity_id;
+
+-- 创建活动
+set @balance =100;
+INSERT INTO `tradedb1`.`csp_activity` (`activity_id`, `activity_name`, `activity_type`, `activity_status`, `begin_time`, `end_time`, `balance`, `creator`, `remark`, `ctime`, `utime`) VALUES (@activity_id, 'tmm_itest', '1', '2',UNIX_TIMESTAMP(date_format(DATE_SUB(NOW(),INTERVAL +1 DAY), '%Y%m%d')) ,UNIX_TIMESTAMP(date_format(DATE_SUB(NOW(),INTERVAL -10 DAY), '%Y%m%d')) , @balance, '12345', NULL, '1515045790', '1515144511');
+
+-- 创建配置
+-- 1479887736941 限领一张
+INSERT INTO `tradedb1`.`csp_coupon_config` (`config_id`, `activity_id`, `game_id`, `os_type`, `value`, `num_limit`, `valid_days`, `config_status`, `creator`, `remark`, `ctime`, `utime`) VALUES ('200022222', @activity_id, '1479887736941', '2', '5', '1', '7', '2', '111', NULL, '1515399562', '1515399690');
+
+-- 1501483404135263 限领2张
+INSERT INTO `tradedb1`.`csp_coupon_config` (`config_id`, `activity_id`, `game_id`, `os_type`, `value`, `num_limit`, `valid_days`, `config_status`, `creator`, `remark`, `ctime`, `utime`) VALUES ('200022223', @activity_id, '1501483404135263', '2', '5', '2', '7', '2', '111', NULL, '1515399562', '1515399690');
+
+-- 1479887736941 余额不足
+INSERT INTO `tradedb1`.`csp_coupon_config` (`config_id`, `activity_id`, `game_id`, `os_type`, `value`, `num_limit`, `valid_days`, `config_status`, `creator`, `remark`, `ctime`, `utime`) VALUES ('200022224',@activity_id, '1501917548532190', '1', '50', '2', '7', '2', '111', NULL, '1515399562', '1515399690');
+
+-- 已经下架 1501555342947295
+INSERT INTO `tradedb1`.`csp_coupon_config` (`config_id`, `activity_id`, `game_id`, `os_type`, `value`, `num_limit`, `valid_days`, `config_status`, `creator`, `remark`, `ctime`, `utime`) VALUES ('200022225',@activity_id, '1501555342947295', '2', '5', '2', '7', '3', '111', NULL, '1515399562', '1515399690');
+
+-- 未上架 1501638381223898
+INSERT INTO `tradedb1`.`csp_coupon_config` (`config_id`, `activity_id`, `game_id`, `os_type`, `value`, `num_limit`, `valid_days`, `config_status`, `creator`, `remark`, `ctime`, `utime`) VALUES ('200022226',@activity_id, '1501638381223898','1', '5', '2', '7', '1', '111', NULL, '1515399562', '1515399690');
+
+
+-- 设置未上架
+update csp_activity set activity_status= 1  where activity_id='1000111111';
+
+-- 设置已下架
+update csp_activity set activity_status= 3  where activity_id='1000111111';
+
+-- 设置金额不足
+update csp_activity set balance= 1  where activity_id='1000111111';
+
+-- 活动过期
+update csp_activity set end_time= UNIX_TIMESTAMP(str_to_date(NOW(), '%Y-%m-%d'))   where activity_id='1000111111';
+
+-- 设置未开始
+update csp_activity set begin_time= UNIX_TIMESTAMP(date_format(DATE_SUB(NOW(),INTERVAL -2 DAY), '%Y%m%d'))    where activity_id='1000111111';
+
+
+set @activity_id='1000111111';
+select * from csp_activity where activity_id=@activity_id;
+select * from csp_coupon_config where  activity_id=@activity_id;
+select * from csp_activity_capital_flow where account_id=@activity_id;
+select * from csp_activity_user where  activety_id=@activity_id;
+select * from csp_coupon where account_id=@activity_id;
+

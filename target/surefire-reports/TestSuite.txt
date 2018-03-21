@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 11.533 sec <<< FAILURE! - in TestSuite
+Test_ByExcel(com.milan.cases.DefaultTest)  Time elapsed: 4.504 sec  <<< FAILURE!
+java.lang.Throwable: null
+	at message : 验证code expected [000] but found [null] in method : .Test_ByExcel(DefaultTest:38)
+	at com.milan.cases.DefaultTest.Test_ByExcel(DefaultTest.java:38)
+
+Test_ByExcel(com.milan.cases.DefaultTest)  Time elapsed: 1.913 sec  <<< FAILURE!
+java.lang.Throwable: null
+	at message : 验证code expected [000] but found [null] in method : .Test_ByExcel(DefaultTest:38)
+	at com.milan.cases.DefaultTest.Test_ByExcel(DefaultTest.java:38)
+
